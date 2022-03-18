@@ -22,8 +22,8 @@ public class Emp {
 	@Column(nullable = false)
 	private String reportsTo;
 
-	// @Column(nullable = false)
-	// private String coverPhotoURL;
+	@Column(nullable = false)
+	private String email;
 
 	@Column(nullable = false)
 	private Long contactNumber;
@@ -60,6 +60,13 @@ public class Emp {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public String getReportsTo() {
 		return reportsTo;
@@ -76,6 +83,7 @@ public class Emp {
 	public void setContactNumber(Long contactNumber) {
 		this.contactNumber = contactNumber;
 	}
+	
 
 	public Double getExperience() {
 		return experience;
@@ -136,12 +144,12 @@ public class Emp {
 	// 	this.author = author;
 	// }
 
-	// public String getCoverPhotoURL() {
-	// 	return coverPhotoURL;
+	// public String getemail() {
+	// 	return email;
 	// }
 
-	// public void setCoverPhotoURL(String coverPhotoURL) {
-	// 	this.coverPhotoURL = coverPhotoURL;
+	// public void setemail(String email) {
+	// 	this.email = email;
 	// }
 
 	// public Long getIsbnNumber() {

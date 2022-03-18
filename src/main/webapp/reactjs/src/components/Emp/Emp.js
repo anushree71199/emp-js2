@@ -9,7 +9,7 @@ import {
   fetchDepts,
 } from "../../services/index";
 
-import { Card, Form, Button, Col, InputGroup, Image } from "react-bootstrap";
+import { Card, Form, Button, Col, InputGroup } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSave,
@@ -25,7 +25,6 @@ class Emp extends Component {
     super(props);
     this.state = this.initialState;
     this.state = {
-      //
       depts: [],
       designations: [],
       show: false,
@@ -36,7 +35,7 @@ class Emp extends Component {
     id: "",
     name: "",
     reportsTo: "",
-    // coverPhotoURL: "",
+    email: "",
     contactNumber: "",
     experience: "",
     designation: "",
@@ -71,11 +70,11 @@ class Emp extends Component {
   findAllDepts = () => {
     this.props.fetchDepts();
     setTimeout(() => {
-      let empdepts = this.props.empObject.depts;
-      if (empdepts) {
+      let empDepts = this.props.empObject.depts;
+      if (empDepts) {
         this.setState({
           depts: [{ value: "", display: "Select Department" }].concat(
-            empdepts.map((dept) => {
+            empDepts.map((dept) => {
               return { value: dept, display: dept };
             })
           ),
@@ -93,7 +92,7 @@ class Emp extends Component {
           id: emp.id,
           name: emp.name,
           reportsTo: emp.reportsTo,
-          // coverPhotoURL: emp.coverPhotoURL,
+          email: emp.email,
           contactNumber: emp.contactNumber,
           experience: emp.experience,
           designation: emp.designation,
@@ -107,13 +106,13 @@ class Emp extends Component {
     this.setState(() => this.initialState);
   };
 
-  submitemp = (event) => {
+  submitEmp = (event) => {
     event.preventDefault();
 
     const emp = {
       name: this.state.name,
       reportsTo: this.state.reportsTo,
-    //  /* coverPhotoURL: this.state.coverPhotoURL, */
+     email: this.state.email, 
       contactNumber: this.state.contactNumber,
       experience: this.state.experience,
       designation: this.state.designation,
@@ -139,7 +138,7 @@ class Emp extends Component {
       id: this.state.id,
       name: this.state.name,
       reportsTo: this.state.reportsTo,
-      // coverPhotoURL: this.state.coverPhotoURL,
+      email: this.state.email,
       contactNumber: this.state.contactNumber,
       experience: this.state.experience,
       designation: this.state.designation,
@@ -168,7 +167,7 @@ class Emp extends Component {
   };
 
   render() {
-    const { name, reportsTo, contactNumber, experience, designation, dept } =
+    const { name, reportsTo, email, contactNumber, experience, designation, dept } =
       this.state;
 
     return (
@@ -191,12 +190,12 @@ class Emp extends Component {
           </Card.Header>
           <Form
             onReset={this.resetemp}
-            onSubmit={this.state.id ? this.updateEmp : this.submitemp}
+            onSubmit={this.state.id ? this.updateEmp : this.submitEmp}
             id="empFormId"
           >
             <Card.Body>
               <Form.Row>
-                <Form.Group as={Col} controlId="formGridname">
+                <Form.Group as={Col} controlId="formGridName">
                   <Form.Label>Enter Employee Name</Form.Label>
                   <Form.Control
                     required
@@ -209,7 +208,7 @@ class Emp extends Component {
                     placeholder="Enter Employee Name"
                   />
                 </Form.Group>
-                <Form.Group as={Col} controlId="formGridreportsTo">
+                <Form.Group as={Col} controlId="formGridReportsTo">
                   <Form.Label>Reports To</Form.Label>
                   <Form.Control
                     required
@@ -224,32 +223,22 @@ class Emp extends Component {
                 </Form.Group>
               </Form.Row>
               <Form.Row>
-                <Form.Group as={Col} controlId="formGridCoverPhotoURL">
+                <Form.Group as={Col} controlId="formGridEmail">
                   <Form.Label>Email</Form.Label>
                   <InputGroup>
                     <Form.Control
                       required
                       autoComplete="off"
                       type="test"
-                      // name="coverPhotoURL"
-                      // value={coverPhotoURL}
+                      name="email"
+                      value={email}
                       onChange={this.empChange}
                       className={" text-black"}
-                      placeholder="Enter Employee Email"
+                      placeholder="Enter Employee `Email`"
                     />
-                    {/* <InputGroup.Append>
-                      {this.state.coverPhotoURL !== "" && (
-                        <Image
-                          src={this.state.coverPhotoURL}
-                          roundedRight
-                          width="40"
-                          height="38"
-                        />
-                      )}
-                    </InputGroup.Append> */}
                   </InputGroup>
                 </Form.Group>
-                <Form.Group as={Col} controlId="formGridcontactNumber">
+                <Form.Group as={Col} controlId="formGridContactNumber">
                   <Form.Label>Contact Number</Form.Label>
                   <Form.Control
                     required
@@ -295,7 +284,7 @@ class Emp extends Component {
                     ))}
                   </Form.Control>
                 </Form.Group>
-                <Form.Group as={Col} controlId="formGriddept">
+                <Form.Group as={Col} controlId="formGridDept">
                   <Form.Label>Department</Form.Label>
                   <Form.Control
                     required

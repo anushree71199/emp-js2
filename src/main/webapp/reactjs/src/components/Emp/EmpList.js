@@ -7,7 +7,6 @@ import "./../../assets/css/Style.css";
 import {
   Card,
   Table,
-  Image,
   ButtonGroup,
   Button,
   InputGroup,
@@ -317,6 +316,7 @@ class EmpList extends Component {
                       <FontAwesomeIcon icon={faFastBackward} /> First
                     </Button>
                     <Button
+                    style={{color: 'white'}}
                       type="button"
                       variant="outline-info"
                       disabled={currentPage === 1 ? true : false}
@@ -326,6 +326,7 @@ class EmpList extends Component {
                     </Button>
                   </InputGroup.Prepend>
                   <FormControl
+                  style={{color: 'white'}}
                     className={"page-num bg-dark"}
                     name="currentPage"
                     value={currentPage}

@@ -58,8 +58,7 @@ public class Application implements CommandLineRunner {
 				Emp emp = new Emp();
 				emp.setName("Abhishek");
 				emp.setReportsTo("xyz");
-				// emp.setCoverPhotoURL(
-				// 		"https://images-na.ssl-images-amazon.com/images/I/417zLTa1uqL._SX397_BO1,204,203,200_.jpg");
+				emp.setEmail("test@gmail.com");
 				emp.setContactNumber(1617293989L);
 				emp.setExperience(2.5);
 				emp.setDesignation(".net developer");

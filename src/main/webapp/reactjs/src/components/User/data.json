@@ -1,0 +1,46 @@
+{
+    "name": "Tech Lead Anubhav",
+    "children": [
+      {
+        "name": "Mentor Manish",
+        "attributes": {
+          "department": "DevOps Developer"
+        },
+        "children": [
+          {
+            "name": "Abhishek Trainee",
+            "attributes": {
+              "department": "SAP UI5"
+            }
+          },
+          {
+            "name": "Shubham Trainee",
+            "attributes": {
+              "department": "Backend JAVA"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Mentor Saumya",
+        "attributes": {
+          "department": ".Net Developer"
+        },
+        "children": [
+          {
+            "name": "Mayank Trainee",
+            "attributes": {
+              "department": "SAP UI5"
+            }
+          },
+          {
+            "name": "Riya Trainee",
+            "attributes": {
+              "department": "Backend JAVA"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  
