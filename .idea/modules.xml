@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../book-rest-api-reactjs.iml" filepath="$PROJECT_DIR$/../book-rest-api-reactjs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../emp-rest-api-reactjs.iml" filepath="$PROJECT_DIR$/../emp-rest-api-reactjs.iml" />
     </modules>
   </component>
 </project>

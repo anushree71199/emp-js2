@@ -45,6 +45,7 @@ export const updateEmp = (emp) => {
       })
       .catch((error) => {
         dispatch(empFailure(error));
+        console.log(error);
       });
   };
 };

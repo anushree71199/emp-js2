@@ -102,7 +102,7 @@ class Emp extends Component {
     }, 1000);
   };
 
-  resetemp = () => {
+  resetEmp = () => {
     this.setState(() => this.initialState);
   };
 
@@ -141,8 +141,8 @@ class Emp extends Component {
       email: this.state.email,
       contactNumber: this.state.contactNumber,
       experience: this.state.experience,
-      designation: this.state.designation,
-      dept: this.state.dept,
+      // designation: this.state.designation,
+      // dept: this.state.dept,
     };
     this.props.updateEmp(emp);
     setTimeout(() => {
@@ -189,7 +189,7 @@ class Emp extends Component {
             {this.state.id ? "Update Employee Details" : "Add New Employee Details"}
           </Card.Header>
           <Form
-            onReset={this.resetemp}
+            onReset={this.resetEmp}
             onSubmit={this.state.id ? this.updateEmp : this.submitEmp}
             id="empFormId"
           >
@@ -275,7 +275,7 @@ class Emp extends Component {
                     onChange={this.empChange}
                     name="designation"
                     value={designation}
-                    className={" text-black"}
+                    className={"text-black"}
                   >
                     {this.state.designations.map((designation) => (
                       <option key={designation.value} value={designation.value}>

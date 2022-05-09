@@ -68,7 +68,7 @@ const Register = (props) => {
       </div>
       <Row className="justify-content-md-center">
         <Col xs={5}>
-          <Card className={"border border-dark bg-dark text-white"}>
+          <Card className={"border border-dark bg-secondary text-white"}>
             <Card.Header>
               <FontAwesomeIcon icon={faUserPlus} /> Register
             </Card.Header>
@@ -87,7 +87,7 @@ const Register = (props) => {
                       name="name"
                       value={user.name}
                       onChange={userChange}
-                      className={"bg-dark text-white"}
+                      className={"bg text-black"}
                       placeholder="Enter Name"
                     />
                   </InputGroup>
@@ -108,7 +108,7 @@ const Register = (props) => {
                       name="email"
                       value={user.email}
                       onChange={userChange}
-                      className={"bg-dark text-white"}
+                      className={"bg text-black"}
                       placeholder="Enter Email Address"
                     />
                   </InputGroup>
@@ -129,7 +129,7 @@ const Register = (props) => {
                       name="password"
                       value={user.password}
                       onChange={userChange}
-                      className={"bg-dark text-white"}
+                      className={"bg text-black"}
                       placeholder="Enter Password"
                     />
                   </InputGroup>
@@ -149,7 +149,7 @@ const Register = (props) => {
                       name="mobile"
                       value={user.mobile}
                       onChange={userChange}
-                      className={"bg-dark text-white"}
+                      className={"bg text-black"}
                       placeholder="Enter Mobile Number"
                     />
                   </InputGroup>

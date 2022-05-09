@@ -8,11 +8,12 @@
 		<version>2.4.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.mightyjava</groupId>
-	<artifactId>book-rest-api-reactjs</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>book-rest-api-reactjs</name>
-	<description>Demo project for Spring Boot and ReactJS</description>
+
+	<groupId>com.techgeeks</groupId>
+    <artifactId>employee-rest-api-reactjs</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>employee-rest-api-reactjs</name>
+    <description>Demo project for Spring Boot and ReactJS</description>
 
 	<properties>
 		<java.version>1.8</java.version>

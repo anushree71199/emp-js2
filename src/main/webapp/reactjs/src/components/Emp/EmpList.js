@@ -11,6 +11,7 @@ import {
   Button,
   InputGroup,
   FormControl,
+  Alert,
 } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -82,8 +83,10 @@ class EmpList extends Component {
 
   deleteEmp = (empId) => {
     this.props.deleteEmp(empId);
+    
     setTimeout(() => {
       if (this.props.empObject != null) {
+        <Alert>Are you sure, you want to delete it?</Alert>
         this.setState({ show: true });
         setTimeout(() => this.setState({ show: false }), 3000);
         this.findAllEmps(this.state.currentPage);
@@ -242,6 +245,7 @@ class EmpList extends Component {
                   <th>Name</th>
                   <th>Reports To</th>
                   <th>Contact Number</th>
+                  <th>Email</th>
                   <th onClick={this.sortData}>
                     Experience{" "}
                     <div
@@ -272,6 +276,7 @@ class EmpList extends Component {
                       </td>
                       <td>{emp.reportsTo}</td>
                       <td>{emp.contactNumber}</td>
+                      <td>{emp.email}</td>
                       <td>{emp.experience}</td>
                       <td>{emp.designation}</td>
                       <td>{emp.dept}</td>
@@ -286,7 +291,13 @@ class EmpList extends Component {
                           <Button
                             size="sm"
                             variant="outline-danger"
-                            onClick={() => this.deleteEmp(emp.id)}
+                            onClick={() => {
+                              if (window.confirm('Are you sure you want to delete it ?')) {
+
+                                return this.deleteEmp(emp.id);
+                               }
+
+                            }}
                           >
                             <FontAwesomeIcon icon={faTrash} />
                           </Button>
